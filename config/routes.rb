@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :emoji
       resources :alias
+      post '/emoji/:id/alias/:id', to: 'alias#update'
     end
   end
 end
