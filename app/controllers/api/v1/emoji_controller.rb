@@ -17,6 +17,11 @@ class Api::V1::EmojiController < ApplicationController
         render json: @alias
     end
 
+    def search_by_name
+        @emoji = Emoji.all.find { |i| i.name.downcase.include?(params[:search]) }
+        render json: @emoji
+    end
+
     def search
         @emoji = Emoji.find_by(unified: params[:q])
         render json: @emoji

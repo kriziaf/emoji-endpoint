@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :emoji
       resources :alias
       post '/search', to: 'emoji#search'
+      post '/searchbyname', to: 'emoji#search_by_name'
     end
   end
 end
