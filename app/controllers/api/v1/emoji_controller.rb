@@ -16,4 +16,9 @@ class Api::V1::EmojiController < ApplicationController
         @alias.save
         render json: @alias
     end
+
+    def search
+        @emoji = Emoji.find_by(unified: params[:q])
+        render json: @emoji
+    end
 end
